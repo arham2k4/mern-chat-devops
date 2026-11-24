@@ -2,8 +2,6 @@
 
 A real-time chat application packaged for two deployment workflows. Docker Compose runs the frontend, API and MongoDB together on one host. Kubernetes manifests describe the same components as Deployments and Services in the `chat-app` namespace.
 
-![Chat application interface](frontend/public/screenshot-for-readme.png)
-
 ## How a message travels
 
 React sends requests to the same origin that served the page. Nginx serves the frontend and forwards `/api/` and `/socket.io/` to Express on port 5001. Express stores users and messages in MongoDB. Socket.IO delivers live updates and online status. Signup and login use a JWT in an HTTP-only cookie.
